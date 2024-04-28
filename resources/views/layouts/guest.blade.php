@@ -76,10 +76,10 @@
             class="btn btn-link dark:text-white" href="{{ route('login') }}">
             Login
           </a>
-          <a
+          {{-- <a
             class="btn btn-primary dark:text-white" href="{{ route('register') }}">
             Register
-          </a>
+          </a> --}}
         </div>
       </nav>
     </div>

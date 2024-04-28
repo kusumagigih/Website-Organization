@@ -1,39 +1,9 @@
-@props([
-    'navbar' => [
-        [
-            'label' => 'Beranda',
-            'link' => 'home',
-        ],
-        [
-            'label' => 'Tentang Organisasi dan Kader',
-            'link' => 'tentang.index',
-        ],
-        [
-            'label' => 'Kontak',
-            'link' => 'contact',
-        ],
-        [
-            'label' => 'Opini Kader',
-            'link' => 'blogs.index',
-        ],
-        [
-            'label' => 'Informasi Kegiatan Teknik',
-            'link' => 'activity.index',
-        ],
-    ],
-])
-
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <div class="flex flex-wrap items-center justify-between w-full lg:w-auto">
-                    <div class="shrink-0 flex items-center">
-                        <a href="{{ route('dashboard') }}">
-                            <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-                        </a>
-                    </div>
                     <button aria-label="Toggle Menu"
                         class="px-2 py-1 ml-auto text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
                         id="headlessui-disclosure-button-:R956:" type="button" aria-expanded="false"

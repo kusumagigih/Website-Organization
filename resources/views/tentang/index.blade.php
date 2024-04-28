@@ -6,14 +6,15 @@
             class="backdrop-brightness-50 absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat">
         </div>
 
-        <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
+        <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-36 lg:pb-48">
             <div class="flex flex-col items-center justify-center lg:flex-row">
                 <div class="rounded-full border-8 border-primary shadow-xl">
-                    <img src="{{ url('/images/dpk.png') }}" class="h-48 rounded-full sm:h-56" alt="Image">
+                    <img src="{{ url('/images/teknik.png') }}" class="h-3/6 w-72 rounded-full sm:h-3/6" alt="Image">
                 </div>
                 <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-                    <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-                        DPK GmnI Teknik Universitas Trunojoyo Madura
+                    <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl whitespace-pre-line">
+                        DPK GmnI Teknik 
+                        Universitas Trunojoyo Madura
                     </h1>
                 </div>
             </div>
@@ -26,8 +27,8 @@
         </h2>
         <div class="container my-12">
             <div class="grid grid-cols-3 gap-10 justify-center">
-                @foreach ($list as $tentangs)
-                    <x-tentang-card :tentang="$tentangs" />
+                @foreach ($list as $tentang)
+                    <x-tentang-card :tentang="$tentang" />
                 @endforeach
             </div>
         </div>
