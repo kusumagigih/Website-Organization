@@ -10,7 +10,7 @@
         ],
         [
             'label' => 'Kontak',
-            'link' => 'contact',
+            'link' => 'kontak.index',
         ],
         [
             'label' => 'Opini Kader',

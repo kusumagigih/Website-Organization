@@ -4,12 +4,15 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminActivityController;
 use App\Http\Controllers\AdminTentangController;
+use App\Http\Controllers\AdminKontakController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangController;
+use App\Http\Controllers\KontakController;
 use App\Models\Activity;
 use App\Models\Tentang;
+use App\Models\Kontak;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +41,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/kontak', [HomeController::class, 'contact'])->name('contact');
+// Route::get('/kontak', [HomeController::class, 'contact'])->name('contact');
 // Route::get('/admin/blog', [AdminBlogController::class, 'index'])->name('blogs.index');
 
 Route::resource('tentang', TentangController::class)->parameters([
@@ -59,8 +62,15 @@ Route::resource('activity', ActivityController::class)->parameters([
     'index', 'show'
 ]);
 
+Route::resource('kontak', KontakController::class)->parameters([
+    'kontak' => 'kontak:slug'
+])->only([
+    'index'
+]);
+
 Route::resource('admin/blog', AdminBlogController::class);
 Route::resource('admin/activiti', AdminActivityController::class);
 Route::resource('admin/tentangg', AdminTentangController::class);
+Route::resource('admin/kontakk', AdminKontakController::class);
 
 require __DIR__.'/auth.php';

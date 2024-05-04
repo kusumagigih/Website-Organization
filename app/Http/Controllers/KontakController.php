@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tentang;
+use App\Models\kontak;
 use Illuminate\Http\Request;
 
-class TentangController extends Controller
+class KontakController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $list = Tentang::orderByDesc('id')->get();
-        return view('tentang.index', compact("list"));
+        $list = Kontak::orderByDesc('id')->get();
+        return view('kontak.index', compact("list"));
     }
 
     /**
@@ -35,15 +35,15 @@ class TentangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tentang $tentang)
+    public function show(kontak $kontak)
     {
-        // return view('tentang.show', compact("tentang"));
+        // return view('kontak.show', compact("kontak"));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tentang $tentang)
+    public function edit(kontak $kontak)
     {
         //
     }
@@ -51,7 +51,7 @@ class TentangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tentang $tentang)
+    public function update(Request $request, kontak $kontak)
     {
         //
     }
@@ -59,7 +59,7 @@ class TentangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tentang $tentang)
+    public function destroy(kontak $kontak)
     {
         //
     }

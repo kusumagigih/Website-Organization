@@ -1,3 +1,4 @@
+{{-- @props(['kontak']) --}}
 <x-guest-layout>
     <div x-data="{ open: false }" class="container dark:text-white py-16 md:py-20" id="contact">
         <h2
@@ -8,6 +9,7 @@
         </h2>
 
         <div class="flex flex-col pt-16 lg:flex-row">
+            @foreach ($list as $kontak)
             <div class="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
                 <div class="items-center">
                     <i class="bx bx-phone text-2xl text-grey-40"></i>
@@ -15,14 +17,18 @@
                         Contact Person
                     </p>
                 </div>
+                
                 <div class="text-center">
+                    
                     <x-secondary-button>
-                        <a target="_blank" href="https://wa.link/d3lnje"
+                        <a target="_blank" href="{{ $kontak->linkwa }}"
                             class="text-center font-body font-bold text-primary lg:text-lg">
-                            (+62) 82273002691
+                            {{ $kontak->nomer }}
                         </a>
                     </x-secondary-button>
+                    
                 </div>
+                
             </div>
             <div
                 class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
@@ -33,7 +39,7 @@
                     </p>
                 </div>
                 <p class="pt-2 text-center font-body font-bold text-primary lg:text-lg">
-                    dpkteknik@gmail.com
+                    {{ $kontak->email }}
                 </p>
             </div>
             <div
@@ -45,9 +51,10 @@
                     </p>
                 </div>
                 <p class="pt-2 text-center font-body font-bold text-primary lg:text-lg">
-                    Kontrakan Bung Raka
+                    {{ $kontak->sekret }}
                 </p>
             </div>
+            @endforeach
         </div>
     </div>
 </x-guest-layout>
